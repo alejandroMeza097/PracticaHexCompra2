@@ -7,11 +7,13 @@ import org.mapstruct.Mapping;
 
 @Mapper(componentModel = "spring")
 public interface ClienteDtoMapper {
-    @Mapping(source = "id",target = "id")
-    @Mapping(source = "nombre",target = "nombre")
-    @Mapping(source = "apellido",target = "apellido")
-    @Mapping(source = "email",target = "email")
-    @Mapping(source = "telefono",target = "telefono")
-    @Mapping(source = "direccion",target = "direccion")
+
+    @Mapping(target = "id", source = "id")
+    @Mapping(target = "nombre", source = "nombre")
+    @Mapping(target = "apellido", source = "apellido")
+    @Mapping(target = "email", source = "email")
+    @Mapping(target = "telefono", source = "telefono")
+    @Mapping(target = "direccion", source = "direccion")
     ClienteDto toDto(Cliente domain);
 }
+
