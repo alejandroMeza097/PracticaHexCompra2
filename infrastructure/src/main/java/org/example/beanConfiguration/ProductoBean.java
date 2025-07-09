@@ -36,4 +36,8 @@ public class ProductoBean {
         return new ProductoUpdateService(productoRepository);
     }
 
+    @Bean ProductoExistByNameService productoExistByNameService(ProductoRepository productoRepository){
+        return new ProductoExistByNameService(productoRepository);
+    }
+
 }

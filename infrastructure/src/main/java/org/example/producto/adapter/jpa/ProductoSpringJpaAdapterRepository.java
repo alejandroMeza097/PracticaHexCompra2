@@ -8,4 +8,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ProductoSpringJpaAdapterRepository extends JpaRepository<ProductoEntity,Long> {
     ProductoEntity getById(Long id);
+    boolean existsByNombre(String nombre);
 }

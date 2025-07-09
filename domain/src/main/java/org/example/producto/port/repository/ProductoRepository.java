@@ -7,4 +7,5 @@ public interface ProductoRepository {
     Producto create(Producto producto);
     Producto update(Long id, Producto producto);
     void delete(Long id);
+    boolean existsByName(String nombre);
 }

@@ -30,9 +30,11 @@ public class ProductoJpaAdapterRepository implements ProductoRepository {
 
     @Override
     public void delete(Long id) {
-        if(!productoSpringJpaAdapterRepository.existsById(id)){
-            throw new ClienteException("Producto NO encontrado");
-        }
         productoSpringJpaAdapterRepository.deleteById(id);
+    }
+
+    @Override
+    public boolean existsByName(String nombre) {
+        return productoSpringJpaAdapterRepository.existsByNombre(nombre);
     }
 }
