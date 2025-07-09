@@ -15,5 +15,6 @@ public interface ClienteDtoMapper {
     @Mapping(target = "telefono", source = "telefono")
     @Mapping(target = "direccion", source = "direccion")
     ClienteDto toDto(Cliente domain);
+
 }
 
