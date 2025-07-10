@@ -2,6 +2,7 @@ package org.example.producto.service;
 import lombok.RequiredArgsConstructor;
 import org.example.cliente.model.dto.command.ClienteCreateCommand;
 import org.example.cliente.model.entity.Cliente;
+import org.example.message.port.MessageRepository;
 import org.example.producto.model.dto.command.ProductoCreateCommand;
 import org.example.producto.model.entity.Producto;
 import org.example.producto.model.exception.ProductoException;
@@ -14,10 +15,12 @@ import java.math.BigDecimal;
 @RequiredArgsConstructor
 public class ProductoCreateService {
     private final ProductoRepository productoRepository;
+    private  final MessageRepository messageRepository;
 
     public Producto execute(ProductoCreateCommand productoCreateCommand){
         validarProducto(productoCreateCommand);
         Producto productoToCreate = new Producto().requestToCreate(productoCreateCommand);
+        messageRepository.publishMessage("Producto creado...");
         return productoRepository.create(productoToCreate);
     }
 

@@ -3,6 +3,7 @@ package org.example.beanConfiguration;
 import org.example.cliente.port.dao.ClienteDao;
 import org.example.cliente.port.repository.ClienteRepository;
 import org.example.cliente.service.*;
+import org.example.message.port.MessageRepository;
 import org.example.producto.port.dao.ProductoDao;
 import org.example.producto.port.repository.ProductoRepository;
 import org.example.producto.service.*;
@@ -13,8 +14,8 @@ import org.springframework.context.annotation.Configuration;
 public class ProductoBean {
 
     @Bean
-    public ProductoCreateService productoCreateService(ProductoRepository productoRepository) {
-        return new ProductoCreateService(productoRepository);
+    public ProductoCreateService productoCreateService(ProductoRepository productoRepository, MessageRepository messageRepository) {
+        return new ProductoCreateService(productoRepository,messageRepository);
     }
 
     @Bean

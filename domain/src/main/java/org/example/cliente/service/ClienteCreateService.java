@@ -6,15 +6,19 @@ import org.example.cliente.model.entity.Cliente;
 import org.example.cliente.model.exception.ClienteException;
 import org.example.cliente.model.exception.ClienteIlegalInputException;
 import org.example.cliente.port.repository.ClienteRepository;
+import org.example.message.port.MessageRepository;
 
 @RequiredArgsConstructor
 public class ClienteCreateService {
 
     //se inyecta clienteRepository
     private final ClienteRepository clienteRepository;
+    private final MessageRepository messageRepository;
+
     public Cliente execute(ClienteCreateCommand clienteCreateCommand){
         validarCliente(clienteCreateCommand);
         Cliente clienteToCreate = new Cliente().requestToCreate(clienteCreateCommand);
+        messageRepository.publishMessage("Cliente creado : " + clienteToCreate.toString());
         return  clienteRepository.create(clienteToCreate);
     }
 
