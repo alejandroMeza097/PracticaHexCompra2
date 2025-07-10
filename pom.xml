@@ -35,7 +35,7 @@
         <scope>import</scope>
       </dependency>
 
-      <!-- Librerías externas con versión fija -->
+
       <dependency>
         <groupId>org.projectlombok</groupId>
         <artifactId>lombok</artifactId>
@@ -48,7 +48,7 @@
         <version>${mapstruct.version}</version>
       </dependency>
 
-      <!-- Tus módulos con versión controlada -->
+
       <dependency>
         <groupId>org.example</groupId>
         <artifactId>domain</artifactId>

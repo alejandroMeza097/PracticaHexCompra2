@@ -59,11 +59,11 @@ public class Cliente {
     public String toString() {
         return "Cliente{" +
 
-                ", nombre=" + nombre +
-                ", apellido=" + apellido +
-                ", email=" + email +
-                ", telefono=" + telefono +
-                ", direccion=" + direccion +
+                ", nombre=" + nombre.getNombre() +
+                ", apellido=" + apellido.getApellido() +
+                ", email=" + email.getEmail() +
+                ", telefono=" + telefono.getTelefono() +
+                ", direccion=" + direccion.getDireccion() +
 
                 '}';
     }

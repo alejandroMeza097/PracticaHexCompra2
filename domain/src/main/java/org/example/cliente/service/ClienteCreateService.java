@@ -17,7 +17,9 @@ public class ClienteCreateService {
 
     public Cliente execute(ClienteCreateCommand clienteCreateCommand){
         validarCliente(clienteCreateCommand);
+
         Cliente clienteToCreate = new Cliente().requestToCreate(clienteCreateCommand);
+
         messageRepository.publishMessage("Cliente creado : " + clienteToCreate.toString());
         return  clienteRepository.create(clienteToCreate);
     }
