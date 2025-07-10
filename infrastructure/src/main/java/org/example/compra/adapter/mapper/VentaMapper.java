@@ -13,9 +13,13 @@ import java.util.stream.Collectors;
 public class VentaMapper {
 
     public VentaEntity toEntity(Venta venta){
+
         VentaEntity ventaEntity = new VentaEntity();
+        //ventaEntity.setId(venta.getId());
         ventaEntity.setClienteId(venta.getClienteId());
         ventaEntity.setPrecioTotal(venta.getPrecioTotal());
+        ventaEntity.setFechaCompra(venta.getFechaCompra());
+
 
         List<DetalleVentaEntity> detalles = venta.getProductos().stream().map(p ->{
             DetalleVentaEntity detalleVentaEntity = new DetalleVentaEntity();
@@ -33,6 +37,7 @@ public class VentaMapper {
 
     public Venta toDomain(VentaEntity ventaEntity){
         Venta venta = new Venta();
+        venta.setId(ventaEntity.getId());
         venta.setClienteId(ventaEntity.getClienteId());
         venta.setPrecioTotal(ventaEntity.getPrecioTotal());
         venta.setFechaCompra(ventaEntity.getFechaCompra());
