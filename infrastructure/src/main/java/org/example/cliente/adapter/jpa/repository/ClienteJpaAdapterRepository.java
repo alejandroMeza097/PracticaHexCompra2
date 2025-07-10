@@ -40,9 +40,16 @@ public class ClienteJpaAdapterRepository implements ClienteRepository {
 
     @Override
     public void delete(Long id) {
-        if(!clienteSpringJpaAdapterRepository.existsById(id)){
-            throw new ClienteException("Cliente NO encontrado");
-        }
         clienteSpringJpaAdapterRepository.deleteById(id);
+    }
+
+    @Override
+    public boolean existsByNombre(String nombre) {
+        return clienteSpringJpaAdapterRepository.existsByNombre(nombre);
+    }
+
+    @Override
+    public boolean existsByEmail(String email) {
+        return clienteSpringJpaAdapterRepository.existsByEmail(email);
     }
 }

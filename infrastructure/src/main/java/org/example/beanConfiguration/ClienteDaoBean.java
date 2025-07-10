@@ -3,6 +3,7 @@ package org.example.beanConfiguration;
 import org.example.cliente.port.dao.ClienteDao;
 import org.example.cliente.service.ClienteAllService;
 import org.example.cliente.service.ClienteByIdService;
+import org.example.cliente.service.ClienteExistByEmailService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -17,4 +18,6 @@ public class ClienteDaoBean {
     public ClienteByIdService clienteByIdService(ClienteDao clienteDao){
         return new ClienteByIdService(clienteDao);
     }
+
+
 }

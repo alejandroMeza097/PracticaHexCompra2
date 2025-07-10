@@ -4,11 +4,11 @@ public class ProductoNotFoundException extends RuntimeException{
     private String errMessage;
 
     public ProductoNotFoundException(String errMessage) {
-        this.errMessage = errMessage;
+        super(errMessage);
     }
 
     public ProductoNotFoundException() {
-
+        super();
     }
 
     public String getErrMessage() {

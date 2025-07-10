@@ -24,7 +24,8 @@ public class ProductoCreateService {
     //Metodos para realizar validaciones
     private void validarProducto(ProductoCreateCommand productoCreateCommand){
         if(productoCreateCommand.getNombre() == null || productoCreateCommand.getNombre().isBlank()){
-            throw new ProductoIlegalException("El nombre del producto es obligatorio");
+           throw new ProductoIlegalException("El nombre del producto es obligatorio");
+
         }
         if(productoCreateCommand.getPrecio() == null || productoCreateCommand.getPrecio().compareTo(BigDecimal.ZERO) <= 0){
             throw new ProductoIlegalException("El precio es obligatorio y debe ser mayor a cero");

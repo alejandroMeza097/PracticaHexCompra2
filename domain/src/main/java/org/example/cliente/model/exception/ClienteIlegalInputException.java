@@ -1,13 +1,13 @@
-package org.example.producto.model.exception;
+package org.example.cliente.model.exception;
 
-public class ProductoIlegalException extends  RuntimeException {
+public class ClienteIlegalInputException  extends RuntimeException{
+
     private String errMessage;
 
-    public ProductoIlegalException(String errMessage) {
+    public ClienteIlegalInputException(String errMessage) {
         super(errMessage);
     }
-
-    public ProductoIlegalException() {
+    public ClienteIlegalInputException(){
         super();
     }
 

@@ -4,11 +4,11 @@ public class ProductoException extends  RuntimeException {
     private String errMessage;
 
     public ProductoException(String errMessage) {
-        this.errMessage = errMessage;
+        super(errMessage);
     }
 
     public ProductoException(){
-
+        super();
     }
 
     public String getErrMessage() {

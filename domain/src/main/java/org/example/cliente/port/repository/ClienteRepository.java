@@ -6,4 +6,6 @@ public interface ClienteRepository {
     Cliente create(Cliente cliente);
     Cliente update(Long id,Cliente cliente);
     void delete(Long id);
+    boolean existsByNombre(String nombre);
+    boolean existsByEmail(String email);
 }

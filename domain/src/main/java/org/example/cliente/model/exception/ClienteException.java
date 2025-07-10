@@ -4,11 +4,11 @@ public class ClienteException extends RuntimeException {
     private String errorMessage;
 
     public ClienteException(){
-
+        super();
     }
 
     public ClienteException(String errorMessage){
-        this.errorMessage = errorMessage;
+        super(errorMessage);
     }
 
     public String getErrorMessage() {

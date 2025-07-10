@@ -8,4 +8,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ClienteSpringJpaAdapterRepository extends JpaRepository<ClienteEntity,Long> {
     ClienteEntity getById(Long id);
+    boolean existsByNombre(String nombre);
+    boolean existsByEmail(String email);
 }
