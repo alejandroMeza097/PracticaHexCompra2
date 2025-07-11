@@ -7,11 +7,11 @@ Este modulo requiere enviar una petición del tipo Post de la siguiente forma:
 ```
 {
 
-    "nombre":"Mieguel",
-    "apellido":"",
-    "email":"miguel@gmail.com",
-    "telefono":"9541832264",
-    "direccion":"costa chica 431"
+    "nombre":"nombre test",
+    "apellido":"apellido test",
+    "email":"test@gmail.com",
+    "telefono":"111111111",
+    "direccion":"direccion test"
 }
 ```
 La respuesta a esta peticion debe ser : 
@@ -21,11 +21,11 @@ La respuesta a esta peticion debe ser :
 
 
     "id":1,
-    "nombre":"Mieguel",
-    "apellido":"",
-    "email":"miguel@gmail.com",
-    "telefono":"9541832264",
-    "direccion":"costa chica 431"
+    "nombre":"nombre test",
+    "apellido":"apellido test",
+    "email":"test@gmail.com",
+    "telefono":"111111111",
+    "direccion":"direccion test"
 }
 
 ```
