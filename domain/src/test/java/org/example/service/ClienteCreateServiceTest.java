@@ -1,5 +1,4 @@
 package org.example.service;
-
 import org.example.cliente.model.dto.command.ClienteCreateCommand;
 import org.example.cliente.model.entity.Cliente;
 import org.example.cliente.model.exception.ClienteIlegalInputException;
@@ -14,11 +13,8 @@ import org.mockito.Captor;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
-
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.contains;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -77,6 +73,26 @@ public class ClienteCreateServiceTest {
     @Test(expected = ClienteIlegalInputException.class)
     public void apellidoTestlienteIlegalInputException(){
         clienteCreateCommand.setApellido("        ");
+        clienteCreateService.execute(clienteCreateCommand);
+
+    }
+    @Test(expected = ClienteIlegalInputException.class)
+    public void emailTestlienteIlegalInputException(){
+        clienteCreateCommand.setEmail("");
+        clienteCreateService.execute(clienteCreateCommand);
+
+    }
+
+    @Test(expected = ClienteIlegalInputException.class)
+    public void telefonoTestlienteIlegalInputException(){
+        clienteCreateCommand.setTelefono("");
+        clienteCreateService.execute(clienteCreateCommand);
+
+    }
+
+    @Test(expected = ClienteIlegalInputException.class)
+    public void direccionTestlienteIlegalInputException(){
+        clienteCreateCommand.setDireccion("");
         clienteCreateService.execute(clienteCreateCommand);
 
     }

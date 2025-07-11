@@ -1,5 +1,10 @@
 package org.example.producto.model.exception;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Setter
+@Getter
 public class ProductoException extends  RuntimeException {
     private String errMessage;
 
@@ -11,11 +16,4 @@ public class ProductoException extends  RuntimeException {
         super();
     }
 
-    public String getErrMessage() {
-        return errMessage;
-    }
-
-    public void setErrMessage(String errMessage) {
-        this.errMessage = errMessage;
-    }
 }
