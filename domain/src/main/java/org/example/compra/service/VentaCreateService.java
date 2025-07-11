@@ -30,13 +30,13 @@ public class VentaCreateService {
         List<DetalleVenta> detalleVentaList = new ArrayList<>();
         BigDecimal total = BigDecimal.ZERO;
 
-        //validacion de existencia de cliente por id
+
         if(!clienteValidacionDao.existeCliente(ventaCreateComand.getClienteId())){
             throw new ClienteNotFoundException("Cliente NO encontrado");
         }
 
 
-        //validacion de productos por id
+
         for(ProductoCantidadDto productoCantidadDto : ventaCreateComand.getProductos()){
             if(productoCantidadDto == null){
                 throw new ProductoIlegalException("Prodcuto ingresado con erroes");
