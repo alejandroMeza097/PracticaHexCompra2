@@ -36,6 +36,7 @@ public class ProductoControllerAdvice {
 
     @ExceptionHandler(ProductoNotFoundException.class)
     public ResponseEntity<ProductoErrorResponse>handleProductoNotFoundException(ProductoNotFoundException ex){
+        System.out.println("Handler ProductoNotFoundException");
         ProductoErrorResponse response = new ProductoErrorResponse(
                 HttpStatus.BAD_REQUEST,
                 "Producto NO encontrado",

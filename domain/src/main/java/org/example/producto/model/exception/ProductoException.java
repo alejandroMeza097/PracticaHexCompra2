@@ -12,8 +12,5 @@ public class ProductoException extends  RuntimeException {
         super(errMessage);
     }
 
-    public ProductoException(){
-        super();
-    }
 
 }

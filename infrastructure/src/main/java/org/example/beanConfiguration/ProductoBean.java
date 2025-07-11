@@ -3,6 +3,7 @@ package org.example.beanConfiguration;
 import org.example.cliente.port.dao.ClienteDao;
 import org.example.cliente.port.repository.ClienteRepository;
 import org.example.cliente.service.*;
+import org.example.compra.port.dao.ProductoValidacionDao;
 import org.example.message.port.MessageRepository;
 import org.example.producto.port.dao.ProductoDao;
 import org.example.producto.port.repository.ProductoRepository;
@@ -24,8 +25,8 @@ public class ProductoBean {
     }
 
     @Bean
-    public ProductoByIdService productoByIdService(ProductoDao productoDao){
-        return new ProductoByIdService(productoDao);
+    public ProductoByIdService productoByIdService(ProductoDao productoDao, ProductoValidacionDao productoValidacionDao){
+        return new ProductoByIdService(productoDao, productoValidacionDao);
     }
 
     @Bean

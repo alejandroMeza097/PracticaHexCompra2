@@ -39,7 +39,7 @@ public class VentaCreateService {
 
         for(ProductoCantidadDto productoCantidadDto : ventaCreateComand.getProductos()){
             if(productoCantidadDto == null){
-                throw new ProductoIlegalException("Prodcuto ingresado con erroes");
+                throw new ProductoIlegalException("Prodcuto ingresado con errores");
             }
             if(productoCantidadDto.getCantidad() < 0){
                 throw new ProductoIlegalException("La cantidad debe ser mayor a cero");

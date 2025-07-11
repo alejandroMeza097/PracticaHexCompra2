@@ -12,8 +12,6 @@ public class ProductoIlegalException extends  RuntimeException {
         super(errMessage);
     }
 
-    public ProductoIlegalException() {
-        super();
-    }
+
 
 }

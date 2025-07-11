@@ -3,6 +3,7 @@ package org.example.producto.rest.controller;
 
 import org.example.cliente.model.dto.ClienteDto;
 import org.example.producto.model.dto.ProductoDto;
+import org.example.producto.model.exception.ProductoNotFoundException;
 import org.example.producto.query.ProductoAllHandler;
 import org.example.producto.query.ProductoByIdHandler;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -25,6 +26,7 @@ public class ProductoQueryController {
 
     @GetMapping("/{id}")
     public ProductoDto getByIdProducto(@PathVariable("id") Long id){
+
         return productoByIdHandler.execute(id);
     }
 

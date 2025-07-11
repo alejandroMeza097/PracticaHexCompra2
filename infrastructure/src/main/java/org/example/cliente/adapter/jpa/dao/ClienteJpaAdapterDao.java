@@ -22,7 +22,7 @@ public class ClienteJpaAdapterDao implements ClienteDao {
 
     @Override
     public Cliente getById(Long id) {
-        return clienteMapper.toDomain(clienteSpringJpaAdapterRepository.getById(id));
+        return clienteSpringJpaAdapterRepository.findById(id).map(clienteMapper::toDomain).orElse(null);
     }
 
     @Override

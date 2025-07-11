@@ -6,14 +6,10 @@ import lombok.Setter;
 @Setter
 @Getter
 public class ProductoNotFoundException extends RuntimeException{
-    private String errMessage;
 
     public ProductoNotFoundException(String errMessage) {
         super(errMessage);
     }
 
-    public ProductoNotFoundException() {
-        super();
-    }
 
 }
