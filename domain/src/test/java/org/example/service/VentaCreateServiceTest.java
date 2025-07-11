@@ -1,5 +1,4 @@
 package org.example.service;
-
 import org.example.compra.model.dto.ProductoCantidadDto;
 import org.example.compra.model.dto.command.VentaCreateComand;
 import org.example.compra.model.entity.Venta;
