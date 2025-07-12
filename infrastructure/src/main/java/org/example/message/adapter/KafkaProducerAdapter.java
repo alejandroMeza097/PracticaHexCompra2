@@ -13,7 +13,7 @@ import java.util.concurrent.CompletableFuture;
 public class KafkaProducerAdapter {
     private final KafkaTemplate <String,String> kafkaTemplate;
     public String produceMessage(String message){
-        CompletableFuture<SendResult<String, String>> future = kafkaTemplate.send("test-topic", message);
+        CompletableFuture<SendResult<String, String>> future = kafkaTemplate.send("clientes-creados", message);
 
         future.thenAccept(result -> {
             System.out.println("Mensaje enviado con éxito al topic: " + result.getRecordMetadata().topic() +
