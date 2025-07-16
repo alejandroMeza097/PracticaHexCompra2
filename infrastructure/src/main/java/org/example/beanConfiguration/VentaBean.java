@@ -8,6 +8,8 @@ import org.example.compra.service.ClienteValidacionService;
 import org.example.compra.service.ProductoDatosService;
 import org.example.compra.service.ProductoValidacionService;
 import org.example.compra.service.VentaCreateService;
+import org.example.producto.service.ProductoByIdService;
+import org.example.producto.service.ProductoUpdateService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -18,9 +20,11 @@ public class VentaBean {
     public VentaCreateService ventaCreateService(ClienteValidacionDao clienteValidacionDao,
                                                  ProductoValidacionDao productoValidacionDao,
                                                  ProductoDatosDao productoDatosDao,
-                                                 VentaRepository ventaRepository){
+                                                 VentaRepository ventaRepository,
+                                                 ProductoByIdService productoByIdService,
+                                                 ProductoUpdateService productoUpdateService){
 
-        return  new VentaCreateService(clienteValidacionDao,productoValidacionDao,ventaRepository,productoDatosDao);
+        return  new VentaCreateService(clienteValidacionDao,productoValidacionDao,ventaRepository,productoDatosDao,productoByIdService,productoUpdateService);
 
     }
     @Bean

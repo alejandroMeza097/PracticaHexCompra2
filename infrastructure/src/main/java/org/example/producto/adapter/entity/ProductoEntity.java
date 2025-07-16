@@ -23,5 +23,6 @@ public class ProductoEntity {
     private Long id;
     private String nombre;
     private BigDecimal precio;
+    private Integer stock;
 
 }

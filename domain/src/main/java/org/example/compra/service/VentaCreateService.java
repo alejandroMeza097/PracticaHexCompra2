@@ -11,7 +11,10 @@ import org.example.compra.port.dao.ProductoDatosDao;
 import org.example.compra.port.dao.ProductoValidacionDao;
 import org.example.compra.port.repository.VentaRepository;
 import org.example.producto.model.entity.Producto;
+import org.example.producto.model.entity.ProductoStock;
 import org.example.producto.model.exception.ProductoIlegalException;
+import org.example.producto.service.ProductoByIdService;
+import org.example.producto.service.ProductoUpdateService;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -24,6 +27,10 @@ public class VentaCreateService {
     private final ProductoValidacionDao productoValidacionDao;
     private  final VentaRepository ventaRepository;
     private final ProductoDatosDao productoDatosDao;
+    private final ProductoByIdService productoByIdService;
+    private  final ProductoUpdateService productoUpdateService;
+
+
 
     public Venta execute(VentaCreateComand ventaCreateComand){
 
@@ -48,6 +55,20 @@ public class VentaCreateService {
             if(!productoValidacionDao.existeProducto(productoCantidadDto.getProductoId())){
                 throw new ProductoIlegalException("El id del producto NO es valido:" + productoCantidadDto.getProductoId());
             }
+
+            Producto prod = productoByIdService.execute(productoCantidadDto.getProductoId());
+
+            if (prod.getStock() >= productoCantidadDto.getCantidad()) {
+                Integer updatedStock = prod.getStock() - productoCantidadDto.getCantidad();
+                prod.setStock(new ProductoStock(updatedStock));
+                Producto pro = productoUpdateService.execute(productoCantidadDto.getProductoId(), prod);
+            } else {
+                throw new ProductoIlegalException("El stock no es suficiente para efectuar la compra.");
+            }
+
+
+
+
 
             Producto producto = productoDatosDao.obtenerDatos(productoCantidadDto.getProductoId());
             DetalleVenta detalleVenta = new DetalleVenta();

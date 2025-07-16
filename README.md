@@ -2,7 +2,7 @@
 Repositorio sobre arquitectura hexagonal.
 
 ## Modulo de Cliente
-Este modulo requiere enviar una petición del tipo Post de la siguiente forma:
+Este módulo requiere enviar una petición del tipo Post de la siguiente forma:
 
 ```
 {
@@ -31,3 +31,51 @@ La respuesta a esta peticion debe ser :
 ```
 
 ## Módulo de Producto
+Este modulo requiere enviar una solicitud Post de la siguiente forma:
+
+```
+{
+    "nombre": "laptop",
+    "precio": 12.30,
+    "stock": 10
+ }
+```
+La respuesta a esta peticion de ser  :
+```
+{
+    "id":1
+    "nombre": "laptop",
+    "precio": 12.30,
+    "stock": 10
+ }
+```
+
+## Módulo de venta
+En la venta debe realizarse un peticion Post de la siguiente forma:
+```
+{
+  "clienteId":1,
+  "productos": [
+    { "productoId": 7, "cantidad": 45 }
+    
+  ]
+}
+```
+La respuesta esperada debe ser :
+```
+{
+    "id": 20,
+    "clienteId": 1,
+    "productos": [
+        {
+            "productoId": 7,
+            "nombre": "monitor 4k",
+            "cantidad": 45,
+            "precioUnitario": 12.30
+        }
+    ],
+    "precioTotal": 553.50,
+    "fechaCompra": "2025-07-16T16:35:21.8479693"
+}
+```
+

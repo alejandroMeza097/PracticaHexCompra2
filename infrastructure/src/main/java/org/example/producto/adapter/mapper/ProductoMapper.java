@@ -18,7 +18,8 @@ public class ProductoMapper {
         return new Producto(
                 entity.getId(),
                 entity.getNombre(),
-                entity.getPrecio()
+                entity.getPrecio(),
+                entity.getStock()
         );
     }
 
@@ -30,6 +31,7 @@ public class ProductoMapper {
         ProductoEntity entity = new ProductoEntity();
         entity.setNombre(producto.getNombre());
         entity.setPrecio(producto.getPrecio());
+        entity.setStock(producto.getStock());
         return entity;
     }
 }

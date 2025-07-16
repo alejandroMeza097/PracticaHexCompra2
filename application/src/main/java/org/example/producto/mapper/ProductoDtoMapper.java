@@ -11,5 +11,6 @@ public interface ProductoDtoMapper {
     @Mapping(target = "id", source = "id")
     @Mapping(target = "nombre", source = "nombre")
     @Mapping(target = "precio", source = "precio")
+    @Mapping(target = "stock",source = "stock")
     ProductoDto toDto(Producto domain);
 }

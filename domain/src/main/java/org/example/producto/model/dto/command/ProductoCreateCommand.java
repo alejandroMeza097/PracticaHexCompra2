@@ -15,4 +15,5 @@ import java.math.BigDecimal;
 public class ProductoCreateCommand {
     private String nombre;
     private BigDecimal precio;
+    private Integer stock;
 }

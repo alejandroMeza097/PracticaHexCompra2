@@ -36,6 +36,9 @@ public class ProductoCreateService {
         if(productoRepository.existsByName(productoCreateCommand.getNombre())){
             throw new ProductoException("Nombre de producto ingresado anteriormente");
         }
+        if(productoCreateCommand.getStock() == null || productoCreateCommand.getStock() < 0){
+            throw new ProductoIlegalException("El stock es obligatorio y debe ser mayor a cero");
+        }
 
     }
 }

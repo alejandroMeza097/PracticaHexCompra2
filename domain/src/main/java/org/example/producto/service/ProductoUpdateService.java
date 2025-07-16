@@ -9,6 +9,7 @@ import org.example.producto.port.repository.ProductoRepository;
 @RequiredArgsConstructor
 public class ProductoUpdateService {
     private final ProductoRepository productoRepository;
+
     public Producto execute(Long id, Producto producto){
         return productoRepository.update(id,producto);
     }
